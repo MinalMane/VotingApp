@@ -1,0 +1,15 @@
+{% extends 'Poll/base.html' %}
+{% block main_content %}
+    <font color="yellow">
+    <h1> {{question.question_text}} </h1>
+    <ul>
+
+        {% for choice in question.choice_set.all %}
+        <li> {{choice.choice_text}} -- {{choice.votes}} vote{{choice.votes| pluralize}}</li>
+        {% endfor %}
+    </ul>
+
+
+<a href = "{% url 'Poll:detail' question.id %}"> Back </a>
+</font>
+{% endblock %}

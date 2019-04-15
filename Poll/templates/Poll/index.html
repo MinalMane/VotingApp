@@ -1,0 +1,13 @@
+{% extends 'Poll/base.html' %}
+{% block main_content %}
+{% if the_question %}
+    <ul>
+        {% for question in the_question %}
+
+          <a href = "{% url 'Poll:detail' question.id %}"><font size='7' color="yellow"><b>Welcome to IPL voting app</b></font></a>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p> You dont have any question</p>
+{% endif %}
+{% endblock %}
